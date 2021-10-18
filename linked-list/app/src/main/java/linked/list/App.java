@@ -14,6 +14,9 @@ public class App {
         mainList.insert(3);
         mainList.insert(10);
         mainList.insert(-1);
+        mainList.append(2);
+       mainList.insertBefore(-1,9);
+        mainList.insertAfter(2,6);
         System.out.println(mainList);
         printLinkedListValues(mainList);
         System.out.println(mainList.includes(-1));
