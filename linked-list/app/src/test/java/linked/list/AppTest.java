@@ -74,6 +74,68 @@ class AppTest {
         String expectedResult="{4} -> {6} -> {2} -> {-1} -> {10} -> NULL";
         assertEquals(expectedResult,testList.toString());
     }
+//lab 06 tests.
+    @Test void appendTest () {
+        LinkedList<Integer> testList = new LinkedList<>();
+        testList.insert(1);
+        testList.insert(2);
+        testList.insert(3);
+        testList.append(6);
+        String resultString = "{3} -> {2} -> {1} -> {6} -> NULL";
+        assertEquals( resultString , testList.toString() );
+    }
+
+    @Test void appendMultiValueTest () {
+        LinkedList<Integer> testList = new LinkedList<>();
+        testList.insert(3);
+        testList.insert(2);
+        testList.insert(1);
+        testList.append(4);
+        testList.append(5);
+        testList.append(6);
+        String resultString = "{1} -> {2} -> {3} -> {4} -> {5} -> {6} -> NULL";
+        assertEquals( resultString , testList.toString() );
+    }
+
+    @Test void beforeMiddleTest () {
+        LinkedList<Integer> testList = new LinkedList<>();
+        testList.append(1);
+        testList.append(2);
+        testList.append(3);
+        testList.insertBefore(2,5);
+        String resultString = "{1} -> {5} -> {2} -> {3} -> NULL";
+        assertEquals( resultString , testList.toString() );
+    }
+
+    @Test void beforeFirstTest () {
+        LinkedList<Integer> testList = new LinkedList<>();
+        testList.append(1);
+        testList.append(2);
+        testList.append(3);
+        testList.insertBefore(1,4);
+        String resultString = "{4} -> {1} -> {2} -> {3} -> NULL";
+        assertEquals( resultString , testList.toString() );
+    }
+
+    @Test void afterMiddleTest () {
+        LinkedList<Integer> testList = new LinkedList<>();
+        testList.append(3);
+        testList.append(2);
+        testList.append(1);
+        testList.insertAfter(2,10);
+        String resultString = "{3} -> {2} -> {10} -> {1} -> NULL";
+        assertEquals( resultString , testList.toString() );
+    }
+
+    @Test void afterLastTest () {
+        LinkedList<Integer> testList = new LinkedList<>();
+        testList.append(1);
+        testList.append(2);
+        testList.append(3);
+        testList.insertAfter(3,5);
+        String resultString = "{1} -> {2} -> {3} -> {5} -> NULL";
+        assertEquals( resultString , testList.toString() );
+    }
 
 
 }
