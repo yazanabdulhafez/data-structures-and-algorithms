@@ -81,6 +81,46 @@ public class LinkedList<T> {
         }
         return false;
     }
+    //this is delete method for a certain node.
+
+    public void delete(T value) {
+        Node<T> current = head;
+        while (current.next != null) {
+            if (current.next.value == value) {
+                Node<T> testNode = current.next;
+                current.next = testNode.next;
+                break;
+            }
+            current = current.next;
+        }
+    }
+
+    //this is a method to return value in provided index.
+    public String kthFromEnd(int k){
+        if (head==null){
+            return "Exception";
+        }
+        Node<T> current = head;
+        int counter = 0;
+        while (current.next != null) {
+            current = current.next;
+            counter++;
+        }
+
+        if (k > counter || k < 0) {
+            return "Exception";
+        } else {
+            current = head;
+            for (int i = 0; i <= counter - k; i++) {
+                if (i == counter - k) {
+                    return "{" + current.value + "}";
+                }
+                current = current.next;
+            }
+        }
+        return "Exception";
+    }
+
 
     //this is a method to modify the toString to control the output string.
     public String toString() {
