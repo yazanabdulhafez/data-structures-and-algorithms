@@ -22,6 +22,9 @@ public class App {
         System.out.println(mainList.includes(-1));
         System.out.println(mainList.includes(1));
         System.out.println(mainList.head.value);
+        System.out.println("value at node k"+ mainList.kthFromEnd(4));
+        mainList.delete(10);
+        System.out.println(mainList);
     }
 
     //this is a method to print the values of linked list each one on a line.
