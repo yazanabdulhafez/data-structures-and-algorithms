@@ -4,6 +4,7 @@
 package linked.list;
 
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
@@ -184,4 +185,87 @@ class AppTest {
         assertEquals( "{8}" , testList.kthFromEnd(2) );
     }
 
+    /* Test Zipped list if both lists are empty */
+    @Test void zipBothEmpty () {
+        LinkedList<Integer> testList1 = new LinkedList<>();
+        LinkedList<Integer> testList2 = new LinkedList<>();
+
+        String newZippedList = testList1.zipLists(testList1,testList2);
+
+        assertNull(newZippedList);
+    }
+
+    /* Test Zipped list if first list is empty */
+    @Test void zipFirstIsEmpty () {
+        LinkedList<Integer> testList1 = new LinkedList<>();
+        LinkedList<Integer> testList2 = new LinkedList<>();
+        testList2.append(7);
+        testList2.append(8);
+        testList2.append(9);
+
+        String newZippedList = testList1.zipLists(testList1,testList2);
+        String result = "{7} -> {8} -> {9} -> NULL";
+
+        assertEquals( result , newZippedList);
+    }
+
+    /* Test Zipped list if second list is empty */
+    @Test void zipSecondIsEmpty () {
+        LinkedList<Integer> testList1 = new LinkedList<>();
+        testList1.append(7);
+        testList1.append(8);
+        testList1.append(9);
+        LinkedList<Integer> testList2 = new LinkedList<>();
+
+        String newZippedList = testList1.zipLists(testList1,testList2);
+        String result = "{7} -> {8} -> {9} -> NULL";
+
+        assertEquals( result , newZippedList);
+    }
+
+    /* Test Zipped list if first list size larger than second list size */
+    @Test void zipFirstSizeLarger () {
+        LinkedList<Integer> testList1 = new LinkedList<>();
+        testList1.append(1);
+        testList1.append(2);
+        testList1.append(3);
+        LinkedList<Integer> testList2 = new LinkedList<>();
+        testList2.append(7);
+
+        String newZippedList = testList1.zipLists(testList1,testList2);
+        String result = "{1} -> {7} -> {2} -> {3} -> NULL";
+
+        assertEquals( result , newZippedList);
+    }
+
+    /* Test Zipped list if Second list size larger than first list size */
+    @Test void zipSecondSizeLarger () {
+        LinkedList<Integer> testList1 = new LinkedList<>();
+        testList1.append(1);
+        LinkedList<Integer> testList2 = new LinkedList<>();
+        testList2.append(7);
+        testList2.append(8);
+        testList2.append(9);
+
+        String newZippedList = testList1.zipLists(testList1,testList2);
+        String result = "{1} -> {7} -> {8} -> {9} -> NULL";
+
+        assertEquals( result , newZippedList);
+    }
+
+    /* Happy path */
+    @Test void zipHappyPath () {
+        LinkedList<Integer> testList1 = new LinkedList<>();
+        testList1.append(1);
+        testList1.append(2);
+        testList1.append(3);
+        LinkedList<Integer> testList2 = new LinkedList<>();
+        testList2.append(7);
+        testList2.append(8);
+        testList2.append(9);
+        String newZippedList = testList1.zipLists(testList1,testList2);
+        String result = "{1} -> {7} -> {2} -> {8} -> {3} -> {9} -> NULL";
+
+        assertEquals( result , newZippedList);
+    }
 }
