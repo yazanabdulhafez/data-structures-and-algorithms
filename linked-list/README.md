@@ -24,22 +24,35 @@ The kthFromEnd method
 
 ![kthFromEnd](img/kthFromEnd.png)
 
+The zipLists method
+
+![The zipLists](img/codechalenge8.png)
+
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 I use the while() loop. This allows me to continually check that the Next node in the list is not null.
 
 Time : O(n). Space : O(1).
 
-### lab06
+### code chalenge 6
 
 In lab 06 I use the while() loop. and If statments to know the node to be insert before it or after it.
 Time : O(n). Space : O(1). for all the functions.
 
-### lab07
+### code chalenge 7
 
 The method kthFromEnd(int k) will use a int Count to store the length of linked list using while loop,then use a current.next != null inside another while loop to get the value of the wanted node. After the completion of the while loop  If this loop does not produce the correct result, it will return Exception.
 Time and Space Efficiency
 kthFromEnd(int k)
+Time: O(n)
+Space: O(1)
+
+### code chalenge 8
+
+Zip the two linked lists together into one so that the nodes alternate between the two lists and return a reference to the head of the zipped list.
+
+zipLists(LinkedList list1,LinkedList list2)
+Time and Space Efficiency
 Time: O(n)
 Space: O(1)
 
@@ -74,3 +87,7 @@ It take a value, new value and its adds a new node with the given new value imme
 ### kthFromEnd
 
 Write a method called kthFromEnd which takes in a value that represents how far back from the end of the linked list to find. It then returns the value at that distance from the end - the last linked list item is considered to be index = 0
+
+### zipLists
+
+Write a function called zip lists which take 2 linked lists as Arguments and returns LinkedList zipped.
