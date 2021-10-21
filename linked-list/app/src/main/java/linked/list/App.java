@@ -25,10 +25,44 @@ public class App {
         System.out.println("value at node k"+ mainList.kthFromEnd(4));
         mainList.delete(10);
         System.out.println(mainList);
+        System.out.println("-----------------------------------------------");
+
+        LinkedList<Integer> TestList = new LinkedList<>();
+        TestList.insert(5);
+        TestList.insert(4);
+        TestList.insert(3);
+        TestList.insert(2);
+        TestList.insert(1);
+
+            System.out.println("Given Linked list");
+        System.out.println(TestList);
+
+            System.out.println("Reversed linked list ");
+
+        System.out.println(TestList.reverseLinkedList(TestList));
+
+        System.out.println("-----------------------------------------------");
+        LinkedList<Integer> TestList1 = new LinkedList<>();
+        TestList1.append(5);
+        TestList1.append(4);
+        TestList1.append(3);
+        TestList1.append(2);
+        TestList1.append(1);
+        LinkedList<Integer> TestList2 = new LinkedList<>();
+        TestList2.append(6);
+        TestList2.append(7);
+
+        TestList2.append(8);
+        TestList2.append(9);
+        TestList2.append(10);
+        System.out.println(TestList1);
+        System.out.println(TestList2);
+        System.out.println(TestList1.zipLists(TestList1,TestList2));
+
     }
 
     //this is a method to print the values of linked list each one on a line.
-    public static void printLinkedListValues(LinkedList mainList){
+    public static void printLinkedListValues(LinkedList<Integer> mainList){
         Node current=mainList.head;
         while (current != null) {
             System.out.println(current.value);
