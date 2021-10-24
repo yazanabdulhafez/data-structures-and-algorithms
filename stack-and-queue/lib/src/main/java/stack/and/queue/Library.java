@@ -25,6 +25,14 @@ public class Library {
         System.out.println("front: "+queue.peek());
         System.out.println("queue is Empty: "+queue.isEmpty());
 
+        PseudoQueue<Integer> pseudoQueue=new PseudoQueue<>();
+        pseudoQueue.enqueue(20);
+        pseudoQueue.enqueue(15);
+        pseudoQueue.enqueue(10);
+        pseudoQueue.enqueue(5);
+        System.out.println(pseudoQueue.toString());
+        System.out.println(pseudoQueue.dequeue());
+        System.out.println(pseudoQueue.toString());
     }
 
 }

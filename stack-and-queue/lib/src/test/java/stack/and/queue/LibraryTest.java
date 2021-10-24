@@ -140,4 +140,28 @@ class LibraryTest {
         queue.peek();
         assertNull(queue.toString());
     }
+
+    //    stack-queue-pseudo
+    @Test void stackQueuePseudo() {
+        PseudoQueue<Integer> test = new PseudoQueue<>();
+
+        // Edge case "List is empty"
+        assertNull(test.dequeue());
+
+        test.enqueue(5);
+        test.enqueue(3);
+        test.enqueue(2);
+        test.enqueue(4);
+        test.enqueue(6);
+
+        // Happy path - delete first in "5"
+        assertEquals(5, test.dequeue());
+
+        test.dequeue();
+        test.dequeue();
+
+        // Correct removing "4"
+        assertEquals(4, test.dequeue());
+    }
+
 }
