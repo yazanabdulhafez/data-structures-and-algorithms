@@ -8,25 +8,36 @@ Create  Node class to use it inside the linked list class which contain number o
 
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
-The append method
+
+1. [The append Whiteboard link](#the-append-method)
+
+2. [The insertBefore Whiteboard link](#an-insertbefore-method)
+
+3. [The insertAfter method Whiteboard link](#insertafter-method)
+
+4. [The kthFromEnd method Whiteboard link](#kthfromend-method)
+
+5. [The zipLists method Whiteboard link](#ziplists-method)
+
+### The append method
 
 ![append](img/append.png)
 
-The insertBefore method
+### an insertBefore method
 
 ![insertBefore](img/insertbefore.png)
 
-The insertAfter method
+### insertAfter method
 
 ![insertAfter](img/insertafter.png)
 
-The kthFromEnd method
+### kthFromEnd method
 
 ![kthFromEnd](img/kthFromEnd.png)
 
-The zipLists method
+### zipLists method
 
-![The zipLists](img/codechalenge8.png)
+![zipLists](img/codechalenge8.png)
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->

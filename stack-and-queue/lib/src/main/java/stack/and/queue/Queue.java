@@ -4,7 +4,7 @@ public class Queue<T> {
     Node<T> front;
     Node<T> back;
 
-  
+
     public void  enqueue(T value){
         Node<T> newNode=new Node<>(value);
         if(front==null){

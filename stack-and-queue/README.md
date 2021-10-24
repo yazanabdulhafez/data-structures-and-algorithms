@@ -1,6 +1,5 @@
 # Stacks and Queues
 <!-- Short summary or background information -->
-## My partner in this code challenge **Tamara Bassam**
 
 ## What is a Stack
 
@@ -27,8 +26,10 @@ A queue is a lot like a stack. It is a linear structure (FIFO) order, but they d
 5. Peek - When you peek you will view the value of the front Node in the queue. If called when the queue is empty an exception will be raised.
 6. IsEmpty - returns true when queue is empty otherwise returns false.
 
-## Challenge
+## Code Challenge 10
 <!-- Description of the challenge -->
+## My partner in this code challenge **Tamara Bassam**
+
 Using a Linked List as the underlying data storage mechanism, implement both a Stack and a Queue.
 
 ## Approach & Efficiency
@@ -60,3 +61,25 @@ dequeue(): Removes the node from the front of the queue. Should raise exception 
 peek(): Returns Value of the node located at the top of the queue. Should raise exception when called on empty queue.
 
 is empty(): Returns Boolean indicating whether or not the queue is empty.
+
+## Code Challenge 11 Summary
+
+<!-- Description of the challenge -->
+Create a class Pseudoqueue which utilizes two stacks and has the methods enqueue(T value) and dequeue() and acts in the same way as the Class Queue.
+
+### Whiteboard Process
+<!-- Embedded whiteboard image -->
+![PseudoQueue](img/codeChallenge11.png)
+
+### Code Challenge 11 Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+Approach:
+Utilize the methods push, pop, and peek to move the data between the two stacks to emulate a queue. The enqueue will be a simple push into stack1 to create a structure for holding the data. The dequeue will utilze two while loops - the first will pop the data from stack1 into stack2 - this will set the data up to look like a queue (where top is front) and then assign a response value to stack2.pop(). The second while loop will then push the values back into stack1 so new values can use the enqueue to be added to the back of the queue.
+
+* Time and Space:
+* `enqueue(T value)`
+  * T: O(1)
+  * S: O(1)
+* `dequeue()`
+  * T: O(n)
+  * S: O(1)
