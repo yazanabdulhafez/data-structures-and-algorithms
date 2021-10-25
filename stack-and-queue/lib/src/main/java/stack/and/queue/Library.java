@@ -33,6 +33,24 @@ public class Library {
         System.out.println(pseudoQueue.toString());
         System.out.println(pseudoQueue.dequeue());
         System.out.println(pseudoQueue.toString());
+
+
+        AnimalShelter animalShelter=new AnimalShelter();
+        System.out.println(animalShelter.toString());
+        Dog dog=new Dog("max");
+        System.out.println(dog);
+        animalShelter.enqueue(dog);
+        System.out.println(animalShelter);
+        Cat cat=new Cat("franki");
+        System.out.println(cat);
+        animalShelter.enqueue(cat);
+        System.out.println(animalShelter);
+        Cat cat2=new Cat("loosy");
+        System.out.println(cat2);
+        animalShelter.enqueue(cat2);
+        System.out.println(animalShelter);
+        animalShelter.dequeue("cat");
+        System.out.println(animalShelter);
     }
 
 }

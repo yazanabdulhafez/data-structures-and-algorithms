@@ -164,4 +164,45 @@ class LibraryTest {
         assertEquals(4, test.dequeue());
     }
 
+    @Test
+    public void animalShelterTest(){
+        AnimalShelter animalShelter=new AnimalShelter();
+        System.out.println(animalShelter.toString());
+        Dog max=new Dog("max");
+        Cat franki=new Cat("franki");
+        Cat loosy=new Cat("loosy");
+       Dog sheberd=new Dog("sheberd");
+       Cat daizy=new Cat("daizy");
+
+       //test for Edge case "object is empty"
+       assertNull(animalShelter.toString());
+
+
+       //test Add cats and dogs in order "first in first out"
+        animalShelter.enqueue(max);
+        animalShelter.enqueue(franki);
+        animalShelter.enqueue(loosy);
+        animalShelter.enqueue(sheberd);
+        animalShelter.enqueue(daizy);
+
+        String expectedStr="AnimalShelter[catGroup=Queue: front=[Cat{name= franki}]"
+                +"-->[Cat{name= loosy}]-->[Cat{name= daizy}]=back, dogGroup=Queue:"+"" +
+                " front=[Dog{name= max}]-->[Dog{name= sheberd}]=back]";
+
+        assertEquals(expectedStr,animalShelter.toString());
+
+
+        //test to ensure that first cat is first cat out
+        assertEquals(franki,animalShelter.dequeue("cat"));
+
+
+        //test to ensure that first dog is first dog out
+        assertEquals(max,animalShelter.dequeue("dog"));
+
+        // If pref is not "dog" or "cat" then return "null".
+
+        assertNull(animalShelter.dequeue("none"));
+
+    }
+
 }

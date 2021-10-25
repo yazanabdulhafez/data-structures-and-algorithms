@@ -83,3 +83,25 @@ Utilize the methods push, pop, and peek to move the data between the two stacks 
 * `dequeue()`
   * T: O(n)
   * S: O(1)
+
+## Code Challenge 12 Summary
+
+<!-- Description of the challenge -->
+Create a Class AnimalShelter that has the methods enqueue(AdoptableAnimal animal) and dequeue(String animalPreference) which holds only Dog and Cat and acts in a first-in-first-out approach.
+
+### Whiteboard Process for this challenge
+<!-- Embedded whiteboard image -->
+![PseudoQueue](img/codeChallenge12.png)
+
+### Code Challenge 12 Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+Approach:
+Utilize the methods from the Queue class to enable use of the prebuild enqueue(T value) and dequeue() methods. Also utilize the class Animal and classes Dog and Cat to create the structure to hold the correct animal objects in AnimalShelter class.
+
+* Time and Space:
+* `enqueue(T value)`
+  * T: O(1)
+  * S: O(1)
+* `dequeue()`
+  * T: O(1)
+  * S: O(1)
