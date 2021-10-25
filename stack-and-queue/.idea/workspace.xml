@@ -5,16 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fe49101f-e631-46db-a949-2c7ca7410b56" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/main/java/stack/and/queue/PseudoQueue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/src/main/java/stack/and/queue/Animal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/src/main/java/stack/and/queue/AnimalShelter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/src/main/java/stack/and/queue/Cat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/src/main/java/stack/and/queue/Dog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../array-binary-search/img/code chalenge 3.png:Zone.Identifier" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../array-insert-shift/img/codeChalenge2.png:Zone.Identifier" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../array-reverse/img/code chalenge 1.png:Zone.Identifier" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../linked-list/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../linked-list/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/main/java/stack/and/queue/Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/main/java/stack/and/queue/Library.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/main/java/stack/and/queue/Queue.java" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/main/java/stack/and/queue/Queue.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/test/java/stack/and/queue/LibraryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/test/java/stack/and/queue/LibraryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -27,10 +26,21 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view />
+      </state>
+    </system>
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -50,9 +60,19 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager" selected="Application.Library">
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="stack.and.queue" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Gradle.LibraryTest.animalShelterTest">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="stack.and.queue.App" />
       <module name="stack-and-queue.app.main" />
@@ -100,6 +120,27 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="LibraryTest.animalShelterTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;stack.and.queue.LibraryTest.animalShelterTest&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":lib:test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="LibraryTest.stackQueuePseudo" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -123,6 +164,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.LibraryTest.animalShelterTest" />
         <item itemvalue="Gradle.LibraryTest.stackQueuePseudo" />
         <item itemvalue="Application.Library" />
         <item itemvalue="Gradle.LibraryTest" />
