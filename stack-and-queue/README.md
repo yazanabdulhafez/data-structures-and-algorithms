@@ -105,3 +105,22 @@ Utilize the methods from the Queue class to enable use of the prebuild enqueue(T
 * `dequeue()`
   * T: O(1)
   * S: O(1)
+
+## Code Challenge 13 Summary
+
+<!-- Description of the challenge -->
+Write a function called validate brackets takes sn arguments of string and return a boolean value representing whether or not the brackets in the string are balanced
+
+### Whiteboard for this challenge
+<!-- Embedded whiteboard image -->
+![PseudoQueue](img/codeChallenge13.png)
+
+### Code Challenge 13 Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+Utilize a stack. Go character by character through the string, when hit an opening bracket push it into the stack. When hit a closing bracket check if it's opening partner matches the peek value of the stack top - if yes, pop the bracket, else return false.
+if stack is empty return true, else return false;
+
+* Time and Space:
+* `validateBrackets(String str)`
+  * T: O(n)
+  * S: O(1)

@@ -203,6 +203,28 @@ class LibraryTest {
 
         assertNull(animalShelter.dequeue("none"));
 
+
+    }
+
+    @Test
+    public void validatorBracetsTest(){
+Validator testValidator=new Validator();
+
+assertTrue(testValidator.validateBrackets("{}"));
+assertTrue(testValidator.validateBrackets("{}(){}"));
+assertTrue(testValidator.validateBrackets("()[[Extra Characters]]"));
+
+assertTrue(testValidator.validateBrackets("(){}[[]]"));
+assertTrue(testValidator.validateBrackets("{}{Code}[Fellows](())"));
+assertFalse(testValidator.validateBrackets("[({}]"));
+assertFalse(testValidator.validateBrackets("(]("));
+assertFalse(testValidator.validateBrackets("{(})"));
+
+assertFalse(testValidator.validateBrackets("{"));
+assertFalse(testValidator.validateBrackets(")"));
+assertFalse(testValidator.validateBrackets("[}"));
+
+
     }
 
 }
