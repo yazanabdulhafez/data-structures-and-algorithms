@@ -51,6 +51,10 @@ public class Library {
         System.out.println(animalShelter);
         animalShelter.dequeue("cat");
         System.out.println(animalShelter);
+
+
+        Validator validator =new Validator();
+        System.out.println(validator.validateBrackets("[[y{a()za}n]]"));
     }
 
 }
