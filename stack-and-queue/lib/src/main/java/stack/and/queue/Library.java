@@ -55,6 +55,35 @@ public class Library {
 
         Validator validator =new Validator();
         System.out.println(validator.validateBrackets("[[y{a()za}n]]"));
+        int[]arr={1,2,15,6};
+        GetMax getMax=new GetMax();
+        getMax.push(arr);
+        System.out.println(getMax.getMaxValue());
+        System.out.println(getMax.actualStack);
+        System.out.println(getMax.maxStack);
+        System.out.println("---------------------------");
+        getMax.pop();
+        System.out.println(getMax.actualStack);
+        System.out.println(getMax.maxStack);
+        System.out.println(getMax.getMaxValue());
+        System.out.println("---------------------------");
+        getMax.pop();
+
+        System.out.println(getMax.actualStack);
+        System.out.println(getMax.maxStack);
+        System.out.println(getMax.getMaxValue());
+        System.out.println("---------------------------");
+        getMax.pop();
+        System.out.println(getMax.actualStack);
+        System.out.println(getMax.maxStack);
+        System.out.println(getMax.getMaxValue());
+//
+//        String[] arr1={"A","B","C","D","E"};
+//        DuckDuckGoose duckDuckGoose=new DuckDuckGoose();
+//        duckDuckGoose.duckGoose(arr1,3);
     }
+
+
+
 
 }
