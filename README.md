@@ -9,3 +9,4 @@
 |3       |[BinarySearch](array-binary-search/binarySearch.md)|
 |4       |[Linked List](linked-list/README.md)|
 |5       |[Stacks and Queues](stack-and-queue/README.md)|
+|6       |[Trees](trees/README.md)|
