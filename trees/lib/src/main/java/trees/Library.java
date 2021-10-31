@@ -53,6 +53,20 @@ public class Library {
         System.out.println("The result is (false): " + binarySearchTree.contains(-15));
         System.out.println("The result is (true): " + binarySearchTree.contains(-1));
         System.out.println("The result is (false): " + binarySearchTree.contains(23));
+
+
+        BinaryTree<Integer> newTree1 = new BinaryTree<>();
+        newTree1.root = new Node<>(25);
+        Node<Integer> node1 = new Node<>(5);
+        Node<Integer> node2 = new Node<>(24);
+        Node<Integer> node3 = new Node<>(20, node1, node2);
+        Node<Integer> node5 = new Node<>(28);
+        Node<Integer> node4 = new Node<>(50, node5, null);
+        newTree1.root.rightChild = node4;
+        newTree1.root.leftChild = node3;
+
+        System.out.println("----------------------------------");
+        System.out.println("The max value is: "+newTree1.maximumValue());
     }
 }
 

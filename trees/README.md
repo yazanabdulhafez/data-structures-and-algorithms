@@ -37,6 +37,20 @@ Time : O(n) in the worst case.
 
 Space : O(1).
 
+### Code Challenge 16
+
+Find the maximum value in a given tree.
+
+## Approach & Efficiency (16)
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+In add method I used for loop to find the  max value .this is good approch to be used.
+
+add():
+
+Time : O(n).
+
+Space : O(1).
+
 ## API
 <!-- Description of each method publicly available in each of your trees -->
 ### Code Challenge (15)
@@ -54,3 +68,14 @@ Space : O(1).
 * `Class:Binary Search Tree`
   * add(Integer value)
   * contains(Integer value)
+
+### Code Challenge (16)
+
+#### Classes and Methods(16)
+
+* `maximumValue()`
+
+## Whiteboard Process
+<!-- Embedded whiteboard image -->
+
+![code challenge 16](img/codechallenge16.png)
