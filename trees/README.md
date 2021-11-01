@@ -51,6 +51,20 @@ Time : O(n).
 
 Space : O(1).
 
+### Code Challenge 17
+
+Write a function called breadth first with Arguments tree and return a list of all values in the tree, in the order they were encountered
+
+## Approach & Efficiency (17)
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+In add method I used while loop totraverse through the tree .this is good approch to be used.
+
+add():
+
+Time : O(n).
+
+Space : O(n).
+
 ## API
 <!-- Description of each method publicly available in each of your trees -->
 ### Code Challenge (15)
@@ -79,3 +93,14 @@ Space : O(1).
 <!-- Embedded whiteboard image -->
 
 ![code challenge 16](img/codechallenge16.png)
+
+### Code Challenge (17)
+
+#### Classes and Methods(17)
+
+* `breadthFirst(BinaryTree<Integer> tree)`
+
+## Whiteboard
+<!-- Embedded whiteboard image -->
+
+![code challenge 17](img/codechalenge17.png)

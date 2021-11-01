@@ -115,6 +115,43 @@ class LibraryTest {
         newTree.root.rightChild = node4;
         newTree.root.leftChild = node3;
         assertEquals( 6, newTree.maximumValue());
+
+
     }
+
+    @Test void bredthFirstTest() {
+
+//        // Test maximumValue if list is empty
+        BinaryTree<Integer> newTree = new BinaryTree<>();
+        assertNull(Library.breadthFirst(newTree));
+
+        // Test maximumValue if list has only the root
+        newTree.root = new Node<>(5);
+        ArrayList<Integer> response=new ArrayList<>();
+        response.add(5);
+
+        assertEquals( response , Library.breadthFirst(newTree));
+
+        // Test maximumValue in the happy path
+        Node<Integer> node1 = new Node<>(2);
+        Node<Integer> node2 = new Node<>(-5);
+        Node<Integer> node3 = new Node<>(1, node1, node2);
+        Node<Integer> node5 = new Node<>(6);
+        Node<Integer> node4 = new Node<>(4, node5, null);
+        newTree.root.rightChild = node4;
+        newTree.root.leftChild = node3;
+        ArrayList<Integer> response1=new ArrayList<>();
+        response1.add(5);
+        response1.add(1);
+        response1.add(4);
+        response1.add(2);
+        response1.add(-5);
+        response1.add(6);
+        assertEquals( response1, Library.breadthFirst(newTree));
+
+
+    }
+
+
 
 }
