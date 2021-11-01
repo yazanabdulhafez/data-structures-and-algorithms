@@ -4,6 +4,7 @@ public class Node <T>{
     public T value;
     public Node<T> leftChild;
     public Node<T> rightChild;
+    public Node<T> next;
 
 
     //leaf node

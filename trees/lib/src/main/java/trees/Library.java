@@ -3,11 +3,16 @@
  */
 package trees;
 
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Library {
     public boolean someLibraryMethod() {
         return true;
     }
     public static void main(String[] args) {
+
         BinaryTree<String> newTree = new BinaryTree<>();
 
         Node<String> nodeD = new Node<>("D");
@@ -67,7 +72,31 @@ public class Library {
 
         System.out.println("----------------------------------");
         System.out.println("The max value is: "+newTree1.maximumValue());
+        System.out.println("----------------------------------");
+        System.out.println("Breadth First traversal: "+breadthFirst(newTree1));
     }
+    public static  List<Integer> breadthFirst(BinaryTree<Integer> tree) {
+        if (tree.root==null) {
+            return null;
+        }
+
+        List<Integer> response = new ArrayList<>();
+        Queue<Node<Integer>> queue = new Queue<>();
+        queue.enqueue(tree.root);
+
+        while (!queue.isEmpty()) {
+            Node<Integer> current = queue.dequeue();
+            response.add(current.value);
+            if (current.leftChild != null) {
+                queue.enqueue(current.leftChild);
+            }
+            if (current.rightChild != null) {
+                queue.enqueue(current.rightChild);
+            }
+        }
+        return response;
+    }
+
 }
 
 

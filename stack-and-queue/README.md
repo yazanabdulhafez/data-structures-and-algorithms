@@ -91,7 +91,7 @@ Create a Class AnimalShelter that has the methods enqueue(AdoptableAnimal animal
 
 ### Whiteboard Process for this challenge
 <!-- Embedded whiteboard image -->
-![PseudoQueue](img/codeChallenge12.png)
+![Animal shelter](img/codechallenge12.png)
 
 ### Code Challenge 12 Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
