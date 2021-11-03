@@ -2,18 +2,20 @@ package trees;
 
 import java.util.ArrayList;
 
-public class BinaryTree<T> {
+public class KaryTree <T>{
 
     ArrayList<T> preOrderList = new ArrayList<>();
     ArrayList<T> inOrderList = new ArrayList<>();
     ArrayList<T> postOrderList = new ArrayList<>();
-    Node<T> root;
-    public ArrayList<T> preOrder(Node<T> root) {
+    KNode<T> root;
+    public ArrayList<T> preOrder(KNode<T> root) {
         try {
             if (root != null) {
                 preOrderList.add(root.value);
-                preOrder(root.leftChild);
-                preOrder(root.rightChild);
+                for (int i = 0; i < root.children.size(); i++) {
+                    preOrder(root.children.get(i));
+                }
+
             }
         } catch (NullPointerException nullPointerException) {
             System.out.println(nullPointerException.getMessage());
@@ -21,12 +23,14 @@ public class BinaryTree<T> {
         return preOrderList;
     }
 
-    public ArrayList<T> inOrder(Node<T> root) {
+    public ArrayList<T> inOrder(KNode<T> root) {
         try {
             if (root != null) {
-                inOrder(root.leftChild);
+
                 inOrderList.add(root.value);
-                inOrder(root.rightChild);
+                for (int i = 0; i < root.children.size(); i++) {
+                    preOrder(root.children.get(i));
+                }
             }
         } catch (NullPointerException nullPointerException) {
             System.out.println(nullPointerException.getMessage());
@@ -34,11 +38,12 @@ public class BinaryTree<T> {
         return inOrderList;
     }
 
-    public ArrayList<T> postOrder(Node<T> root) {
+    public ArrayList<T> postOrder(KNode<T> root) {
         try {
             if (root != null) {
-                postOrder(root.leftChild);
-                postOrder(root.rightChild);
+                for (int i = 0; i < root.children.size(); i++) {
+                    preOrder(root.children.get(i));
+                }
                 postOrderList.add(root.value);
             }
 
@@ -48,31 +53,13 @@ public class BinaryTree<T> {
         return postOrderList;
     }
 
-    public int maximumValue() {
-        if (root == null){
-            return 0;
-        }
-        if (root.leftChild == null || root.rightChild == null){
-            return (Integer)root.value;
-        }
-        int maxValue = 0;
-        ArrayList<Integer> maxList = (ArrayList<Integer>) postOrder((Node<T>) root);
-        for (Integer integer : maxList) {
-            if (integer >= maxValue) {
-                maxValue = integer;
-            }
-        }
-        return maxValue;
-    }
-
-
     @Override
     public String toString() {
-        if (preOrderList.isEmpty()&&inOrderList.isEmpty()&&postOrderList.isEmpty()) return "empty tree lists";
-        else return "BinaryTree{" +
-                ", preOrderList=" + preOrderList +
+        return "karyTree{" +
+                "preOrderList=" + preOrderList +
                 ", inOrderList=" + inOrderList +
                 ", postOrderList=" + postOrderList +
+                ", root=" + root +
                 '}';
     }
 }
