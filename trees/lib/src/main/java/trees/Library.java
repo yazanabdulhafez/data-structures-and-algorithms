@@ -74,6 +74,16 @@ public class Library {
         System.out.println("The max value is: "+newTree1.maximumValue());
         System.out.println("----------------------------------");
         System.out.println("Breadth First traversal: "+breadthFirst(newTree1));
+
+        Node<Integer> root = new Node<Integer>(0);
+        root.child.add(new Node(2));
+        root.child.add(new Node(3));
+        root.child.add(new Node(5));
+        root.child.get(0).child.add(new Node(12));
+        root.child.get(0).child.add(new Node(22));
+        root.child.get(0).child.add(new Node(15));
+        System.out.println("----------------------------------");
+       System.out.println("FizzBuzz for tree: "+treeFizzBuzz(root));
     }
     public static  List<Integer> breadthFirst(BinaryTree<Integer> tree) {
         if (tree.root==null) {
@@ -95,6 +105,29 @@ public class Library {
             }
         }
         return response;
+    }
+
+
+    public static List treeFizzBuzz(Node<Integer> treeRoot) {
+        List<String> newList = new ArrayList<>();
+        if (treeRoot.value == null) return newList;
+        Queue testQueue = new Queue();
+        testQueue.enqueue(treeRoot);
+        while (!testQueue.isEmpty()) {
+            Node<Integer> focus = (Node<Integer>) testQueue.dequeue();
+            for (int i = 0; i < focus.child.size(); i++)
+                testQueue.enqueue(focus.child.get(i));
+            if (focus.value % 3 == 0 && focus.value % 5 == 0) {
+                newList.add("FizzBuzz");
+            } else if (focus.value % 3 == 0) {
+                newList.add("Fizz");
+            } else if (focus.value % 5 == 0) {
+                newList.add("Buzz");
+            } else {
+                newList.add("\"" + focus.value + "\"");
+            }
+        }
+        return newList;
     }
 
 }

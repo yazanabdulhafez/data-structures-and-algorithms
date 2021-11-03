@@ -63,7 +63,19 @@ add():
 
 Time : O(n).
 
-Space : O(n).
+### Code Challenge 18
+
+Conduct “FizzBuzz” on a k-ary tree while traversing through it to create a new tree.
+
+## Approach & Efficiency (18)
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+In add method I used while loop totraverse through the tree and inside it a for loop to loop through children nodes .this is good approch to be used.
+
+add():
+
+Time : O(n).
+
+Space : O(n)
 
 ## API
 <!-- Description of each method publicly available in each of your trees -->
@@ -104,3 +116,14 @@ Space : O(n).
 <!-- Embedded whiteboard image -->
 
 ![code challenge 17](img/codechalenge17.png)
+
+### Code Challenge (18)
+
+#### Classes and Methods(18)
+
+* `treeFizzBuzz(K-ary tree)`
+
+## Whiteboard(18)
+<!-- Embedded whiteboard image -->
+
+![code challenge 18](img/codechallenge18.png)
