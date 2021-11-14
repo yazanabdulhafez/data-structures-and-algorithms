@@ -1,6 +1,8 @@
 package trees;
 
+import javax.swing.tree.TreeNode;
 import java.util.ArrayList;
+import java.util.List;
 
 public class BinaryTree<T> {
 
@@ -64,6 +66,29 @@ public class BinaryTree<T> {
         }
         return maxValue;
     }
+
+
+        public boolean leafSimilar(Node root1, Node root2) {
+            List<Integer> leaves1 = new ArrayList();
+            List<Integer> leaves2 = new ArrayList();
+            System.out.println(root1);
+            System.out.println(root2);
+            travers(root1, leaves1);
+            travers(root2, leaves2);
+            System.out.println(leaves1);
+            System.out.println(leaves2);
+            return leaves1.size()==leaves2.size();
+        }
+
+        public void travers(Node node, List leafValues) {
+            if (node != null) {
+                if (node.leftChild == null && node.rightChild == null)
+                    leafValues.add(node.value);
+                travers(node.leftChild, leafValues);
+               travers(node.rightChild, leafValues);
+            }
+        }
+
 
 
     @Override

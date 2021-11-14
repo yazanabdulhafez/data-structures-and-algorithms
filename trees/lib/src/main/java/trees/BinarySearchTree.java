@@ -1,5 +1,8 @@
 package trees;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class BinarySearchTree extends BinaryTree {
 
     public Node<Integer> root;
@@ -57,6 +60,30 @@ public class BinarySearchTree extends BinaryTree {
             }
         }
         return false;
+    }
+
+    public int sumOfOddNumbers(BinarySearchTree tree){
+        int sum=0;
+        List<Node> temp=new ArrayList<>();
+        temp.add(tree.root);
+        System.out.println(tree.root);
+        while(!temp.isEmpty()){
+            if ((int)temp.get(0).value%2!=0){
+                sum+=(int)temp.get(0).value;
+            }
+            if (temp.get(0).leftChild!=null){
+                temp.add(temp.get(0).leftChild);
+            }
+
+            if (temp.get(0).rightChild!=null){
+                temp.add(temp.get(0).rightChild);
+            }
+
+            temp.remove(0);
+
+        }
+        return sum;
+
     }
 
 
