@@ -10,3 +10,4 @@
 |4       |[Linked List](linked-list/README.md)|
 |5       |[Stacks and Queues](stack-and-queue/README.md)|
 |6       |[Trees](trees/README.md)|
+|7       |[Sorting](sorting/README.md)|

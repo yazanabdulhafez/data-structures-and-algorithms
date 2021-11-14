@@ -11,6 +11,7 @@ public class Library {
     public boolean someLibraryMethod() {
         return true;
     }
+
     public static void main(String[] args) {
 
         BinaryTree<String> newTree = new BinaryTree<>();
@@ -19,16 +20,38 @@ public class Library {
         Node<String> nodeE = new Node<>("E");
         Node<String> nodeB = new Node<>("B", nodeD, nodeE);
         Node<String> nodeF = new Node<>("F");
-        Node<String> nodeC= new Node<>("C", nodeF, null);
+        Node<String> nodeC = new Node<>("C", nodeF, null);
         Node<String> newTreeRoot = new Node<>("A", nodeB, nodeC);
-        System.out.println("preOrder: "+newTree.preOrder(newTreeRoot));
+        System.out.println("preOrder: " + newTree.preOrder(newTreeRoot));
         System.out.println("----------------------------------");
-        System.out.println("inOrder: "+newTree.inOrder(newTreeRoot));
+        System.out.println("inOrder: " + newTree.inOrder(newTreeRoot));
         System.out.println("----------------------------------");
-        System.out.println("postOrder: "+newTree.postOrder(newTreeRoot));
+        System.out.println("postOrder: " + newTree.postOrder(newTreeRoot));
         System.out.println("----------------------------------");
         System.out.println(newTree.toString());
         System.out.println("----------------------------------");
+
+
+        BinaryTree<String> newTree1 = new BinaryTree<>();
+
+        Node<String> nodeG = new Node<>("G");
+        Node<String> nodeH = new Node<>("H");
+        Node<String> nodeI = new Node<>("I", nodeG, nodeH);
+        Node<String> nodeJ = new Node<>("J");
+        Node<String> nodeK = new Node<>("K", nodeJ, null);
+        Node<String> newTreeRoot1 = new Node<>("L", nodeI, nodeK);
+        System.out.println("preOrder: " + newTree1.preOrder(newTreeRoot1));
+        System.out.println("----------------------------------");
+        System.out.println("inOrder: " + newTree1.inOrder(newTreeRoot1));
+        System.out.println("----------------------------------");
+        System.out.println("postOrder: " + newTree1.postOrder(newTreeRoot1));
+        System.out.println("----------------------------------");
+        System.out.println(newTree1.toString());
+        System.out.println("----------------------------------");
+        BinaryTree binaryTree=new BinaryTree();
+        System.out.println("ARE THEY Identical: "+binaryTree.leafSimilar(newTreeRoot,newTreeRoot1));
+
+
 
 
         BinarySearchTree binarySearchTree = new BinarySearchTree();
@@ -47,11 +70,11 @@ public class Library {
         binarySearchTree.add(28);
         binarySearchTree.add(28);
         binarySearchTree.add(-1);
-        System.out.println("preOrder: "+binarySearchTree.preOrder(binarySearchTree.root));
+        System.out.println("preOrder: " + binarySearchTree.preOrder(binarySearchTree.root));
         System.out.println("----------------------------------");
-        System.out.println("inOrder: "+binarySearchTree.inOrder(binarySearchTree.root));
+        System.out.println("inOrder: " + binarySearchTree.inOrder(binarySearchTree.root));
         System.out.println("----------------------------------");
-        System.out.println("postOrder: "+binarySearchTree.postOrder(binarySearchTree.root));
+        System.out.println("postOrder: " + binarySearchTree.postOrder(binarySearchTree.root));
         System.out.println("----------------------------------");
         System.out.println("The result is (false): " + binarySearchTree.contains(7));
         System.out.println("The result is (true): " + binarySearchTree.contains(205));
@@ -60,20 +83,20 @@ public class Library {
         System.out.println("The result is (false): " + binarySearchTree.contains(23));
 
 
-        BinaryTree<Integer> newTree1 = new BinaryTree<>();
-        newTree1.root = new Node<>(25);
+        BinaryTree<Integer> newTree4 = new BinaryTree<>();
+        newTree4.root = new Node<>(25);
         Node<Integer> node1 = new Node<>(5);
         Node<Integer> node2 = new Node<>(24);
         Node<Integer> node3 = new Node<>(20, node1, node2);
         Node<Integer> node5 = new Node<>(28);
         Node<Integer> node4 = new Node<>(50, node5, null);
-        newTree1.root.rightChild = node4;
-        newTree1.root.leftChild = node3;
+        newTree4.root.rightChild = node4;
+        newTree4.root.leftChild = node3;
 
         System.out.println("----------------------------------");
-        System.out.println("The max value is: "+newTree1.maximumValue());
+        System.out.println("The max value is: " + newTree4.maximumValue());
         System.out.println("----------------------------------");
-        System.out.println("Breadth First traversal: "+breadthFirst(newTree1));
+        System.out.println("Breadth First traversal: " + breadthFirst(newTree4));
 
         Node<Integer> root = new Node<Integer>(0);
         root.child.add(new Node(2));
@@ -83,10 +106,26 @@ public class Library {
         root.child.get(0).child.add(new Node(22));
         root.child.get(0).child.add(new Node(15));
         System.out.println("----------------------------------");
-       System.out.println("FizzBuzz for tree: "+treeFizzBuzz(root));
+        System.out.println("FizzBuzz for tree: " + treeFizzBuzz(root));
+
+
+        BinarySearchTree binarySearchTree2 = new BinarySearchTree();
+        binarySearchTree2.root = new Node<>(8);
+        binarySearchTree2.add(3);
+        binarySearchTree2.add(10);
+        binarySearchTree2.add(1);
+        binarySearchTree2.add(6);
+        binarySearchTree2.add(14);
+        binarySearchTree2.add(4);
+        binarySearchTree2.add(7);
+        binarySearchTree2.add(13);
+        System.out.println(binarySearchTree2.preOrder(binarySearchTree2.root));
+       System.out.println(binarySearchTree2.sumOfOddNumbers(binarySearchTree2));
+
     }
-    public static  List<Integer> breadthFirst(BinaryTree<Integer> tree) {
-        if (tree.root==null) {
+
+    public static List<Integer> breadthFirst(BinaryTree<Integer> tree) {
+        if (tree.root == null) {
             return null;
         }
 
