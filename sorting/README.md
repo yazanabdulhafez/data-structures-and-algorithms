@@ -25,4 +25,5 @@ Space: O(1)
 
 [insertion sort Test](app/src/test/java/sorting/AppTest.java)
 
-How to run the App: clone the repo from GitHub and open the project folder inside your IDE then open file.then build it ,you can run the app by `./gradlew` run,and run the test by `./gradlew` test.
+How to run the App:
+Clone the repo from GitHub and open the project folder inside your IDE then open file.then build it ,you can run the app by `./gradlew` run,and run the test by `./gradlew` test.
