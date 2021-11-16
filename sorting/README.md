@@ -12,6 +12,13 @@ This challange is about sorting an array using Insertion Sort algorithm.You need
 This challange is about sorting an array using merge Sort algorithm.
 Review the pseudocode , then trace the algorithm by stepping through the process with the provided sample array.
 
+### Code challenge #28
+
+This challange is about sorting an array using quick Sort algorithm.
+Review the pseudocode , then trace the algorithm by stepping through the process with the provided sample array.
+
+--------
+
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
 
@@ -50,6 +57,25 @@ Time and Space:
 Time: nlog(n)
 
 Space: O(n)
+
+--------
+
+### Quick sort
+
+![quick Sort](./img/quickSorting.png)
+
+[quick Sort BLOG.md](sorting/quickSortBLOG.md)
+
+## Approach & Efficiency for quick sort
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+
+QuickSort is a Divide and Conquer algorithm. It picks an element as pivot and partitions the given array around the picked pivot.
+
+Time and Space:
+
+Time: O(n log(n))
+
+Space: O(log(n))
 
 ## Solution
 <!-- Show how to run your code, and examples of it in action -->
