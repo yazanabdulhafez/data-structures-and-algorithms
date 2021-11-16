@@ -62,7 +62,7 @@ Space: O(n)
 
 ### Quick sort
 
-![quick Sort](./img/quickSorting.png)
+![quick Sort](./img/codechallenge28.png)
 
 [quick Sort BLOG.md](sorting/quickSortBLOG.md)
 
