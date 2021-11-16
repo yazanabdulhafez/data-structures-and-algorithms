@@ -45,7 +45,7 @@ Space: O(1)
 
 ![merge Sort](img/codeChallenge27.png)
 
-[merge Sort BLOG.md](sorting/mergeSortBLOG.md)
+[merge Sort BLOG.md](./mergeSortBLOG.md)
 
 ## Approach & Efficiency for merge sort
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
@@ -64,7 +64,7 @@ Space: O(n)
 
 ![quick Sort](./img/codechallenge28.png)
 
-[quick Sort BLOG.md](sorting/quickSortBLOG.md)
+[quick Sort BLOG.md](./quickSortBLOG.md)
 
 ## Approach & Efficiency for quick sort
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
@@ -79,9 +79,9 @@ Space: O(log(n))
 
 ## Solution
 <!-- Show how to run your code, and examples of it in action -->
-[insertion sort](app/src/main/java/sorting/App.java)
+[Solution](app/src/main/java/sorting/App.java)
 
-[insertion sort Test](app/src/test/java/sorting/AppTest.java)
+[Solution Test](app/src/test/java/sorting/AppTest.java)
 
 How to run the App:
 Clone the repo from GitHub and open the project folder inside your IDE then open file.then build it ,you can run the app by `./gradlew` run,and run the test by `./gradlew` test.
