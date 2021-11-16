@@ -126,10 +126,11 @@ the result a sorted right part of the main array [4,8,15,16,23,42].
 
 ## Efficency
 
-- **Time: `log(n)`:**
+- **Time: `nlog(n)`:**
 
   Time complexity of Merge Sort is `log(n)` as merge sort always divides the array into two halves and takes linear time to merge two halves.
 
 - **Space: `O(n)`:**
 
   additional space is being created. two new arrays the space at constant `O(n)`.
+  
