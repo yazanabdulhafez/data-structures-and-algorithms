@@ -1,4 +1,4 @@
-# Quick Sort
+# quick Sort
 
 QuickSort algorithm picks an element as pivot and partitions the given array around the picked pivot. There are many different versions of quickSort that pick pivot in different ways.
 
