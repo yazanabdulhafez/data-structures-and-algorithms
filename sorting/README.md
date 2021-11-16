@@ -1,14 +1,27 @@
 # Challenge Summary
 <!-- Description of the challenge -->
+
+## Code Challenge
+
+### Code challenge #26
+
 This challange is about sorting an array using Insertion Sort algorithm.You need to review the pseudocode , then trace the algorithm.
+
+### Code challenge #27
+
+This challange is about sorting an array using merge Sort algorithm.
+Review the pseudocode , then trace the algorithm by stepping through the process with the provided sample array.
 
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
+
+### Insertion Sort
+
 ![Insertion Sort](img/codeChallenge26.png)
 
 [Insertion Sort BLOG.md](BLOG.md)
 
-## Approach & Efficiency
+### Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 
 The insertion sort is a sorting method which is most effective on an array of limited size. This sort compares an element within the array to the next value and checks to see if it is greater than that element and moves the current element to the checked elements position (if the checked element is less than the current).
@@ -18,6 +31,25 @@ Time and Space:
 Time: O(n^2)
 
 Space: O(1)
+
+--------
+
+### merge sort
+
+![merge Sort](img/codeChallenge27.png)
+
+[merge Sort BLOG.md](sorting/mergeSortBLOG.md)
+
+## Approach & Efficiency for merge sort
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+
+Merge Sort is a Divide and Conquer algorithm. It divides the input array into two halves, calls itself for the two halves, and then merges the two sorted halves.
+
+Time and Space:
+
+Time: nlog(n)
+
+Space: O(n)
 
 ## Solution
 <!-- Show how to run your code, and examples of it in action -->
