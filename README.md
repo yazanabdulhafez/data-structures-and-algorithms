@@ -1,6 +1,6 @@
 # data-structures-and-algorithms
 
-## List of code chalanges in this level
+## List of code challenges in this level
 
 |number  |Title   |
 |--------|--------|
@@ -11,3 +11,4 @@
 |5       |[Stacks and Queues](stack-and-queue/README.md)|
 |6       |[Trees](trees/README.md)|
 |7       |[Sorting](sorting/README.md)|
+|8       |[Hash Tables](hashTable/README.md)|

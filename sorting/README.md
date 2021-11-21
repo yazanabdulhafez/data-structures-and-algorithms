@@ -5,7 +5,7 @@
 
 ### Code challenge #26
 
-This challange is about sorting an array using Insertion Sort algorithm.You need to review the pseudocode , then trace the algorithm.
+This challenge is about sorting an array using Insertion Sort algorithm.You need to review the pseudocode , then trace the algorithm.
 
 ### Code challenge #27
 
