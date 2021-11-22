@@ -3,18 +3,42 @@
  */
 package hashTable;
 
-public class Library {
-   public static void main(String[] args){
+import java.util.ArrayList;
 
-      HashTable<String,Integer> hashTable=new HashTable<>();
-      hashTable.add("first",5);
-      hashTable.add("second",100);
-      System.out.println(hashTable.size());
-      System.out.println(hashTable.numBuckets);
-      System.out.println(hashTable.contains("first"));
-      System.out.println(hashTable.contains("hi"));
-      System.out.println(hashTable.get("second"));
-   }
+public class Library {
+    public static void main(String[] args) {
+
+        HashTable<String, Integer> hashTable = new HashTable<>();
+        hashTable.add("first", 5);
+        hashTable.add("second", 100);
+        hashTable.add("first",20);
+        System.out.println(hashTable.size());
+        System.out.println(hashTable.numBuckets);
+        System.out.println(hashTable.contains("first"));
+        System.out.println(hashTable.contains("hi"));
+        System.out.println(hashTable.get("second"));
+        System.out.println(hashTable);
+
+        String str = "It was a queer, sultry summer, the summer they electrocuted the Rosenbergs, and I didn’t know what I was doing in New York...";
+        System.out.println("The repeated word is: " + repeatedWord(str));
+    }
+
+    public static String repeatedWord(String str) {
+        String[] inputStr = str.toLowerCase().replace(",", "").split(" ");
+        HashTable<String, Integer> setOfWords = new HashTable<>();
+
+        for (String s : inputStr) {
+            if (setOfWords.contains(s)) {
+                setOfWords.add(s, setOfWords.get(s) + 1); // word exists
+                return s; //return the first word repeated
+            } else
+                // insert new word to set
+                setOfWords.add(s, 1);
+        }
+
+
+        return "NoRepetition";
+    }
 
 
 }
