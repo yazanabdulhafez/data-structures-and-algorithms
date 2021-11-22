@@ -13,9 +13,9 @@ Hatch table is a data structure it is basically an array of a list. Each list is
 
 ### Why do we use them?
 
-Hold unique values
-Dictionary
-Library
+1. Hold unique values
+2. Dictionary
+3. Library
 
 ## Challenge
 <!-- Description of the challenge -->
@@ -26,7 +26,10 @@ Implement the hash table
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
-Approach:Create the Bucket class which is the building block for the hash table then create hash table class which contain the hash table methods.
+
+CodeChallenge(30)Approach:
+
+Create the Bucket class which is the building block for the hash table then create hash table class which contain the hash table methods.
 
 The time and space complexity is:
 
@@ -50,12 +53,15 @@ The time and space complexity is:
 #### add
 
 Arguments: key, value
+
 Returns: nothing
+
 This method should hash the key, and add the key and value pair to the table, handling collisions as needed.
 
 #### get
 
 Arguments: key
+
 Returns: Value associated with that key in the table
 
 #### contains
@@ -66,4 +72,48 @@ Returns: Boolean, indicating if the key exists in the table already.
 ### hash
 
 Arguments: key
+
 Returns: Index in the collection for that key
+
+Arguments: string
+
+Return: string
+
+## Solution
+
+[Link to the HashTable code](/hashTable/lib/src/main/java/hashTable/HashTable.java)
+
+## repeated word
+
+### Challenge Summary
+<!-- Description of the challenge -->
+Write a function called repeated word that finds the first word to occur more than once in a string.
+
+### Whiteboard Process
+<!-- Embedded whiteboard image -->
+
+![CodeChallenge 31](/hashTable/img/codechallenge31.png)
+
+### Approach & Efficiency for code challenge(31)
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+Approach:
+
+* Create a method which takes in a long string, break the string apart on every space into a String[]
+* Instantiate an empty HashTable
+* Iterate over the String[] - strip the non-letter characters from the words in the array.
+* Conditional check if the hash table has the current word inside it:
+if yes, return that word as the answer
+if no, add the word to the hash table
+
+* `Time and Space:`
+* `repeatedWord(String inputStr)`
+  * T: O(n)
+  * S: O(n)
+
+### Solution for code challenge(31)
+<!-- Show how to run your code, and examples of it in action -->
+[Link to the repeated word code](/hashTable/lib/src/main/java/hashTable/Library.java)
+
+[Link to the Test](/hashTable/lib/src/test/java/hashTable/LibraryTest.java)
+
+Clone the repo from GitHub and open the project folder inside your IDE then open file.then build it ,you can run the library by ./gradlew run,and run the test by ./gradlew test.

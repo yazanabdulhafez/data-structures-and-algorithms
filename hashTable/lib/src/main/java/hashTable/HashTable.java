@@ -20,11 +20,13 @@ public class HashTable <K,V>{
 
 
    public int hash(K key) {
-        int hashCode = key.hashCode();
-        int index = hashCode % numBuckets;
-        // hashCode could be negative.
-        index = index < 0 ? index * -1 : index;
-        return index;
+       int hashValue = 0;
+       char[] letters = key.toString().toCharArray();
+       for (char letter : letters) {
+           hashValue += letter;
+       }
+       hashValue = (hashValue * 33) % hashTable.size();
+       return hashValue;
    }
 
 
@@ -87,10 +89,9 @@ public class HashTable <K,V>{
         // Insert key in chain
        tableSize++;
         head = hashTable.get(bucketIndex);
-        Bucket<K, V> newNode
-                = new Bucket<>(key, value);
-        newNode.next = head;
-        hashTable.set(bucketIndex, newNode);
+        Bucket<K, V> newBucket = new Bucket<>(key, value);
+        newBucket.next = head;
+        hashTable.set(bucketIndex, newBucket);
 
         // If load factor goes beyond threshold, then
         // double hash table size
