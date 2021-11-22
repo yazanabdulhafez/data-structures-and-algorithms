@@ -117,3 +117,36 @@ if no, add the word to the hash table
 [Link to the Test](/hashTable/lib/src/test/java/hashTable/LibraryTest.java)
 
 Clone the repo from GitHub and open the project folder inside your IDE then open file.then build it ,you can run the library by ./gradlew run,and run the test by ./gradlew test.
+
+## Tree Intersection
+
+### Challenge Summary for CC32
+<!-- Description of the challenge -->
+Write a function called tree_intersection that takes two binary trees and Find common values between them.
+
+### Whiteboard Process for CC32
+<!-- Embedded whiteboard image -->
+
+![CodeChallenge 32](/hashTable/img/codechallenge32.png)
+
+### Approach & Efficiency for code challenge(32)
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+Approach:
+
+* Create a method which takes Two trees.
+* Make list for pre order values for both trees
+* Iterate over the the first list and check if the value contains in the other list
+* If yes add it to the output list or go to the next loop.
+
+* `Time and Space:`
+* `treeIntersection(BinaryTree<V> tree1, BinaryTree<V> tree2)`
+  * T: O(n)
+  * S: O(n)
+
+### Solution for code challenge(32)
+<!-- Show how to run your code, and examples of it in action -->
+[Link to the Tree Intersection](/hashTable/lib/src/main/java/hashTable/Library.java)
+
+[Link to the Test](/hashTable/lib/src/test/java/hashTable/LibraryTest.java)
+
+Clone the repo from GitHub and open the project folder inside your IDE then open file.then build it ,you can run the library by ./gradlew run,and run the test by ./gradlew test.
