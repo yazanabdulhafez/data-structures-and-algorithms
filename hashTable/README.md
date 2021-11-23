@@ -150,3 +150,38 @@ Approach:
 [Link to the Test](/hashTable/lib/src/test/java/hashTable/LibraryTest.java)
 
 Clone the repo from GitHub and open the project folder inside your IDE then open file.then build it ,you can run the library by ./gradlew run,and run the test by ./gradlew test.
+
+## LEFT JOINS
+
+### Challenge Summary for CC33
+<!-- Description of the challenge -->
+Implement a simplified LEFT JOIN for 2 Hashmaps.
+
+### Whiteboard Process for CC33
+<!-- Embedded whiteboard image -->
+
+![CodeChallenge 33](/hashTable/img/codechallenge33.png)
+
+### Approach & Efficiency for code challenge(33)
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+Approach:
+
+* Write a function that LEFT JOINs two hashmaps into a single data structure.
+* The first parameter is a hashmap that has word strings as keys, and a synonym of the key as values.
+* The second parameter is a hashmap that has word strings as keys, and antonyms of the key as values.
+* Combine the key and corresponding values (if they exist) into a new data structure according to LEFT JOIN logic.
+* LEFT JOIN means all the values in the first hashmap are returned, and if values exist in the “right” hashmap, they are appended to the result row. If no values exist in the right hashmap, then some flavor of NULL should be appended to the result row.
+* The returned data structure that holds the results is up to you. It doesn’t need to exactly match the output below, so long as it achieves the LEFT JOIN logic.
+
+* `Time and Space:`
+* `leftJoin(HashMap ht1, HashMap ht2)`
+  * T: O(n)
+  * S: O(n)
+
+### Solution for code challenge(33)
+<!-- Show how to run your code, and examples of it in action -->
+[Link to the Left Join](/hashTable/lib/src/main/java/hashTable/Library.java)
+
+[Link to the Test](/hashTable/lib/src/test/java/hashTable/LibraryTest.java)
+
+Clone the repo from GitHub and open the project folder inside your IDE then open file.then build it ,you can run the library by ./gradlew run,and run the test by ./gradlew test.
