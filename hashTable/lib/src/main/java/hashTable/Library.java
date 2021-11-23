@@ -4,7 +4,9 @@
 package hashTable;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Set;
 
 public class Library {
     public static void main(String[] args) {
@@ -42,6 +44,43 @@ public class Library {
         binaryTreeTwo.root.leftChild = node8;
 
         System.out.println(treeIntersection(binaryTreeOne, binaryTreeTwo));
+
+        HashMap<String, String> ht1 = new HashMap<>();
+        ht1.put("fond", "enamored");
+        ht1.put("wrath", "anger");
+        ht1.put("diligent", "employed");
+        ht1.put("outfit", "garb");
+        ht1.put("guide", "usher");
+
+        HashMap<String, String> ht2 = new HashMap<>();
+        ht2.put("fond", "averse");
+        ht2.put("something", "delight");
+
+        System.out.println(leftJoin(ht1,ht2));
+    }
+
+
+
+    public static ArrayList<ArrayList<String>> leftJoin(HashMap ht1, HashMap ht2) {
+        ArrayList<ArrayList<String>> result = new ArrayList<>();
+
+        Set ht1KeySet  = ht1.keySet();
+        for (Object key : ht1KeySet) {
+            ArrayList<String> strings = new ArrayList<>();
+
+            strings.add(String.valueOf(key));
+            strings.add(String.valueOf(ht1.get(key)));
+
+            if (ht2.containsKey(key)) {
+                strings.add(String.valueOf(ht2.get(key)));
+            } else {
+                strings.add(null);
+            }
+
+            result.add(strings);
+        }
+
+        return result;
     }
 
 
