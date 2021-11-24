@@ -3,10 +3,7 @@
  */
 package hashTable;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class Library {
     public static void main(String[] args) {
@@ -57,6 +54,52 @@ public class Library {
         ht2.put("something", "delight");
 
         System.out.println(leftJoin(ht1,ht2));
+
+        String str="No. Try not. Do or do not. There is no try. ";
+
+      System.out.println("answer "+commonWord(str));
+    }
+
+
+
+    public static String commonWord(String inputStr) {
+        ArrayList<String> tempWord = new ArrayList<>();
+        Integer tempCount = 0;
+        Integer count;
+
+        String[] splitedStr = inputStr.toLowerCase().replace(".", "").split(" ");
+
+        HashTable<String, Integer> record = new HashTable<>();
+
+        for (String word : splitedStr) {
+
+            count = record.get(word);
+
+            if (count == null)
+                record.add(word, 1);
+            else {
+                record.add(word, count + 1);
+
+                if (tempCount < count) {
+                    tempCount = count;
+                    tempWord=new ArrayList<>();
+                    tempWord.add(word);
+                    System.out.println(tempWord);
+
+                }else if(tempCount.equals(count)){
+                    tempWord.add(word);
+                }
+            }
+
+        }
+
+            for (String word : splitedStr) {
+                if (tempWord.contains(word)) {
+                    return word;
+                }
+            }
+            return "none";
+
     }
 
 
@@ -122,6 +165,7 @@ public class Library {
 
         return "NoRepetition";
     }
+
 
 
 }
