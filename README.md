@@ -12,3 +12,4 @@
 |6       |[Trees](trees/README.md)|
 |7       |[Sorting](sorting/README.md)|
 |8       |[Hash Tables](hashTable/README.md)|
+|9       |[Graph](graph/graph.md)|
