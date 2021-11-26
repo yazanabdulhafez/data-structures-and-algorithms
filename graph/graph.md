@@ -68,3 +68,11 @@ Efficiency:
   * Arguments: node
   * Returns a collection of edges connected to the given node
   * Include the weight of the connection in the returned collection
+
+## Solution
+<!-- Show how to run your code, and examples of it in action -->
+## [Line to the code==>](/graph/lib/src/main/java/graph/Graph.java)
+
+## [Line to the Test==>](/graph/lib/src/test/java/graph/LibraryTest.java)
+
+Clone the repo from GitHub and open the project folder inside your IDE then open file.then build it ,you can run the library by ./gradlew run,and run the test by ./gradlew test.
