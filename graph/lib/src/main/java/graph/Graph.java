@@ -1,9 +1,6 @@
 package graph;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.NoSuchElementException;
+import java.util.*;
 
 public class Graph <T>{
 
@@ -60,6 +57,27 @@ public class Graph <T>{
 
     public int size() {
         return this.size;
+    }
+
+
+    public  List<Vertex<T>> breadthFirst( Vertex<T> root) {
+        if (root == null) return null;
+            List<Vertex<T>> nodes=new ArrayList<>();
+            Set<Vertex<T>> visited = new HashSet<>();
+            Queue<Vertex<T>> breadth = new Queue<>();
+            breadth.enqueue(root);
+            visited.add(root);
+            while (!breadth.isEmpty()) {
+                Vertex<T> front = breadth.dequeue();
+                nodes.add(front);
+                for (Edge<T> neighbor : getNeighbors(front)) {
+                    if (!visited.contains(neighbor.vertex)) {
+                        visited.add(neighbor.vertex);
+                        breadth.enqueue(neighbor.vertex);
+                    }
+                }
+            }
+            return nodes;
     }
 
     @Override

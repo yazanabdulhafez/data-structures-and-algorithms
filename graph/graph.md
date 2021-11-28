@@ -76,3 +76,34 @@ Efficiency:
 ## [Line to the Test==>](/graph/lib/src/test/java/graph/LibraryTest.java)
 
 Clone the repo from GitHub and open the project folder inside your IDE then open file.then build it ,you can run the library by ./gradlew run,and run the test by ./gradlew test.
+
+## Challenge Summary(36)
+<!-- Description of the challenge -->
+Implement a breadth-first traversal on a graph.
+
+* Feature Tasks
+  * `Write the following method for the Graph class:`
+    * `breadth first`
+    * `Arguments: Node`
+    * `Return: A collection of nodes in the order they were visited.`
+    * `Display the collection`
+
+## Whiteboard Process(36)
+<!-- Embedded whiteboard image -->
+![code challenge 36](/graph/img/codechallenge36.png)
+
+## Approach & Efficiency(36)
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+
+time : O(n^2) - nested loop
+
+scape : O(n) - create new list and Set.
+
+## Solution(36)
+<!-- Show how to run your code, and examples of it in action -->
+
+[Line to the code==>](/graph/lib/src/main/java/graph/Graph.java)
+
+[Line to the Test==>](/graph/lib/src/test/java/graph/LibraryTest.java)
+
+Clone the repo from GitHub and open the project folder inside your IDE then open file.then build it ,you can run the library by ./gradlew run,and run the test by ./gradlew test.

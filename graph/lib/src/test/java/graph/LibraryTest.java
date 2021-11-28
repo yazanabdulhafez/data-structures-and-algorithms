@@ -4,6 +4,9 @@
 package graph;
 
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class LibraryTest {
@@ -44,4 +47,52 @@ class LibraryTest {
 
     }
 
+
+    @Test
+    public void graphBreadthFirst() {
+
+        // if the graph is empty return null
+        Graph<String> myGraph = new Graph<>();
+        assertNull(myGraph.breadthFirst(null));
+
+        // if we have one node with no edges return that node
+        Vertex<String> vertexA=myGraph.addNode("8");
+        assertEquals("[{8}]", myGraph.breadthFirst(vertexA).toString());
+
+        // graph with only one node and one edge with itself return that node
+        myGraph.addEdge(vertexA, vertexA, 0);
+        assertEquals("[{8}]", myGraph.breadthFirst(vertexA).toString());
+
+        // happy path
+        Vertex<String> vertex2=myGraph.addNode("2");
+        Vertex<String> vertex1=myGraph.addNode("1");
+        Vertex<String> vertex9=myGraph.addNode("9");
+        Vertex<String> vertex7=myGraph.addNode("7");
+        Vertex<String> vertex5=myGraph.addNode("5");
+        myGraph.addEdge(vertexA, vertex9, 10);
+        myGraph.addEdge(vertexA, vertex2, 20);
+        myGraph.addEdge(vertexA, vertex1, 20);
+        myGraph.addEdge(vertex5, vertex1, 50);
+        myGraph.addEdge(vertex7, vertex5, 70);
+        assertEquals("[{8}, {9}, {2}, {1}, {5}, {7}]", myGraph.breadthFirst(vertexA).toString());
+
+        /* Pandora, Arendelle, Metroville, Monstroplolis, Narnia, Naboo
+         */
+        Vertex<String> vertexP=myGraph.addNode("Pandora");
+        Vertex<String> vertexAr=myGraph.addNode("Arendelle");
+        Vertex<String> vertexMet=myGraph.addNode("Metroville");
+        Vertex<String> vertexMon=myGraph.addNode("Monstroplolis");
+        Vertex<String> vertexNa=myGraph.addNode("Narnia");
+        Vertex<String> vertexNab=myGraph.addNode("Naboo");
+        myGraph.addEdge(vertexP, vertexAr, 0);
+        myGraph.addEdge(vertexAr, vertexMet,0 );
+        myGraph.addEdge(vertexAr, vertexMet, 0);
+        myGraph.addEdge(vertexMet, vertexMon, 0);
+        myGraph.addEdge(vertexMet, vertexNa, 0);
+        myGraph.addEdge(vertexMet, vertexNab, 0);
+        myGraph.addEdge(vertexNa, vertexNab, 0);
+        myGraph.addEdge(vertexMon, vertexNab, 0);
+        String expected="[{Pandora}, {Arendelle}, {Metroville}, {Monstroplolis}, {Narnia}, {Naboo}]";
+        assertEquals(expected,myGraph.breadthFirst(vertexP).toString());
+    }
 }
