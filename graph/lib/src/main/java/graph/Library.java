@@ -22,5 +22,9 @@ public class Library {
       System.out.println("Graph Neighbors: "+newGraph.getNeighbors(vertexE));
       System.out.println("Graph Neighbors: "+newGraph.getNeighbors(vertexF));
       System.out.println("Graph Size: "+newGraph.size());
+
+      System.out.println("Breadth First Traversal"+newGraph.breadthFirst(vertexA));
+      System.out.println("Breadth First Traversal"+newGraph.breadthFirst(vertexD));
+      System.out.println("Breadth First Traversal"+newGraph.breadthFirst(vertexF));
    }
 }
