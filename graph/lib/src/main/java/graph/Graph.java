@@ -80,6 +80,40 @@ public class Graph <T>{
             return nodes;
     }
 
+
+    public String businessTrip(Graph<T> graph, Vertex<T>[] cities) {
+
+        int cost = 0;
+        boolean isFound = false;
+
+        for (Vertex<T> v : cities) {
+            if (!graph.getNodes().contains(v)) {
+                return  "false, $0";
+            }
+        }
+
+        for (int i = 0; i < cities.length - 1; i++) {
+            isFound = false;
+
+            for (Edge<T> e : graph.getNeighbors(cities[i])) {
+
+                if (e.vertex.value.equals(cities[i + 1].value)) {
+                    cost += e.weight;
+                    isFound = true;
+                    break;
+                }
+            }
+
+            if (!isFound) {
+                // return -> boolean, cost
+                return "false, $0";
+            }
+        }
+
+        return isFound + ", $" + cost;
+    }
+
+
     @Override
     public String toString() {
         if (adjacencyList.isEmpty()) return null;

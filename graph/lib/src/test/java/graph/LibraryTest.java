@@ -20,27 +20,27 @@ class LibraryTest {
 
 //    Node can be successfully added to the graph
 
-        Vertex<String> vertexA=testGraph.addNode("A");
-        assertEquals("[{A}]", testGraph.getNodes().toString());
+        Vertex<String> vertexA=testGraph.addNode("5");
+        assertEquals("[5]", testGraph.getNodes().toString());
 
 //    A graph with only one node and edge can be properly returned
 
         testGraph.addEdge(vertexA, vertexA, 0);
         System.out.println(testGraph);
-        assertEquals("[{A}]", testGraph.getNeighbors(vertexA).toString());
-        assertEquals("{{A}=[{A}]}", testGraph.adjacencyList.toString());
+        assertEquals("[5]", testGraph.getNeighbors(vertexA).toString());
+        assertEquals("{5=[5]}", testGraph.adjacencyList.toString());
 
 //    An edge can be successfully added to the graph
-        Vertex<String> vertexB=testGraph.addNode("B");
+        Vertex<String> vertexB=testGraph.addNode("6");
         testGraph.addEdge(vertexA, vertexB, 0);
-        assertEquals("[{A}, {B}]", testGraph.getNeighbors(vertexA).toString());
-        assertEquals("[{A}]", testGraph.getNeighbors(vertexB).toString());
+        assertEquals("[5, 6]", testGraph.getNeighbors(vertexA).toString());
+        assertEquals("[5]", testGraph.getNeighbors(vertexB).toString());
 
 //    A collection of all nodes can be properly retrieved from the graph
-        assertEquals("[{B}, {A}]", testGraph.getNodes().toString());
+        assertEquals("[5, 6]", testGraph.getNodes().toString());
 
 //    All appropriate neighbors can be retrieved from the graph
-        assertEquals("{{B}=[{A}], {A}=[{A}, {B}]}", testGraph.adjacencyList.toString());
+        assertEquals("{5=[5, 6], 6=[5]}", testGraph.adjacencyList.toString());
 
 //    The proper size is returned, representing the number of nodes in the graph
         assertEquals(2, testGraph.size());
@@ -57,11 +57,11 @@ class LibraryTest {
 
         // if we have one node with no edges return that node
         Vertex<String> vertexA=myGraph.addNode("8");
-        assertEquals("[{8}]", myGraph.breadthFirst(vertexA).toString());
+        assertEquals("[8]", myGraph.breadthFirst(vertexA).toString());
 
         // graph with only one node and one edge with itself return that node
         myGraph.addEdge(vertexA, vertexA, 0);
-        assertEquals("[{8}]", myGraph.breadthFirst(vertexA).toString());
+        assertEquals("[8]", myGraph.breadthFirst(vertexA).toString());
 
         // happy path
         Vertex<String> vertex2=myGraph.addNode("2");
@@ -74,7 +74,7 @@ class LibraryTest {
         myGraph.addEdge(vertexA, vertex1, 20);
         myGraph.addEdge(vertex5, vertex1, 50);
         myGraph.addEdge(vertex7, vertex5, 70);
-        assertEquals("[{8}, {9}, {2}, {1}, {5}, {7}]", myGraph.breadthFirst(vertexA).toString());
+        assertEquals("[8, 9, 2, 1, 5, 7]", myGraph.breadthFirst(vertexA).toString());
 
         /* Pandora, Arendelle, Metroville, Monstroplolis, Narnia, Naboo
          */
@@ -92,7 +92,51 @@ class LibraryTest {
         myGraph.addEdge(vertexMet, vertexNab, 0);
         myGraph.addEdge(vertexNa, vertexNab, 0);
         myGraph.addEdge(vertexMon, vertexNab, 0);
-        String expected="[{Pandora}, {Arendelle}, {Metroville}, {Monstroplolis}, {Narnia}, {Naboo}]";
+        String expected="[Pandora, Arendelle, Metroville, Monstroplolis, Narnia, Naboo]";
         assertEquals(expected,myGraph.breadthFirst(vertexP).toString());
+    }
+@Test
+    public void businessTripTest() {
+        Graph<String> graph = new Graph<>();
+
+        Vertex<String> v1 = graph.addNode("Pandora");
+        Vertex<String> v2 = graph.addNode("Arendelle");
+        Vertex<String> v3 = graph.addNode("Metroville");
+        Vertex<String> v4 = graph.addNode("Monstroplolis");
+        Vertex<String> v5 = graph.addNode("Narnia");
+        Vertex<String> v6 = graph.addNode("Naboo");
+
+        graph.addEdge(v1, v3, 82);
+        graph.addEdge(v1, v2, 150);
+        graph.addEdge(v2, v3, 99);
+        graph.addEdge(v2, v4, 42);
+        graph.addEdge(v3, v4, 105);
+        graph.addEdge(v3, v5, 37);
+        graph.addEdge(v3, v6, 26);
+        graph.addEdge(v4, v6, 73);
+        graph.addEdge(v5, v6, 250);
+
+
+        // move in the same node
+        Vertex[] trip1 = new Vertex[] {v1};
+        assertEquals("false, $0" , graph.businessTrip(graph,trip1));
+
+        // valid trips
+        Vertex[] trip2 = new Vertex[] {v1,v3};
+        Vertex[] trip3 = new Vertex[] {v2,v3,v4};
+        assertEquals("true, $82" , graph.businessTrip(graph,trip2));
+        assertEquals("true, $204" , graph.businessTrip(graph,trip3));
+
+        // invalid trips
+        Vertex[] trip5 = new Vertex[] {v4 , v5};
+        Vertex[] trip6 = new Vertex[] {v3 , v4 , v5 };
+        assertEquals("false, $0" , graph.businessTrip(graph,trip5));
+        assertEquals("false, $0" , graph.businessTrip(graph,trip6));
+
+        // Round trip
+        Vertex[] cities = new Vertex[]{ v1, v2, v3, v4 };
+        Vertex[] cities1 = new Vertex[]{ v1, v2, v3, v4,v6,v5 };
+        assertEquals("true, $354", graph.businessTrip(graph, cities));
+        assertEquals("true, $677", graph.businessTrip(graph, cities1));
     }
 }
