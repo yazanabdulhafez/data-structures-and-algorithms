@@ -107,3 +107,35 @@ scape : O(n) - create new list and Set.
 [Line to the Test==>](/graph/lib/src/test/java/graph/LibraryTest.java)
 
 Clone the repo from GitHub and open the project folder inside your IDE then open file.then build it ,you can run the library by ./gradlew run,and run the test by ./gradlew test.
+
+## business trip
+
+### Challenge(37)
+
+Write a function called business trip
+Determine whether the trip is possible with direct flights, and how much it would cost.
+
+* input -> graph, array of city names.
+
+* output -> cost or null.
+
+## Whiteboard (37)
+
+![business trip](./img/codechallenge37.png)
+
+## Approach & Efficiency(37)
+
+Use a nested loop to check if each city has direct edge with the next city and add the weight of this edge to the cost.
+
+* time : O(n^2) - nested loops.
+
+* scape : O(1) - no extra spaces.
+
+## Solution(37)
+<!-- Show how to run your code, and examples of it in action -->
+
+[Line to the code==>](/graph/lib/src/main/java/graph/Graph.java)
+
+[Line to the Test==>](/graph/lib/src/test/java/graph/LibraryTest.java)
+
+Clone the repo from GitHub and open the project folder inside your IDE then open file.then build it ,you can run the library by ./gradlew run,and run the test by ./gradlew test.
