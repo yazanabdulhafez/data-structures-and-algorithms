@@ -139,3 +139,34 @@ Use a nested loop to check if each city has direct edge with the next city and a
 [Line to the Test==>](/graph/lib/src/test/java/graph/LibraryTest.java)
 
 Clone the repo from GitHub and open the project folder inside your IDE then open file.then build it ,you can run the library by ./gradlew run,and run the test by ./gradlew test.
+
+## Depth First
+
+### Challenge(38)
+
+Write the following method for the Graph class:
+
+* Name: Depth first
+* Arguments: Node (Starting point of search)
+* Return: A collection of nodes in their pre-order depth-first traversal order
+* Program output: Display the collection
+
+## Whiteboard (38)
+
+![depthFirst](/graph/img/CC38.png)
+
+## Approach & Efficiency(38)
+
+we use nested loop to check if the top node has unvisited children to  add them to stack if not pop it from stack.
+
+-Time complexity: O(n^2) - nested loop
+-space complexity:O(n) - create new list and Set.
+
+## Solution(38)
+<!-- Show how to run your code, and examples of it in action -->
+
+[Line to the code==>](/graph/lib/src/main/java/graph/Graph.java)
+
+[Line to the Test==>](/graph/lib/src/test/java/graph/LibraryTest.java)
+
+Clone the repo from GitHub and open the project folder inside your IDE then open file.then build it ,you can run the library by ./gradlew run,and run the test by ./gradlew test.

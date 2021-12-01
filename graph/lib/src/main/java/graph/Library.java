@@ -31,8 +31,14 @@ public class Library {
       System.out.println("Breadth First Traversal"+newGraph.breadthFirst(vertexF));
       System.out.println("-------------------------------------------");
 
+      System.out.println("-------------------------------------------");
+      System.out.println("Depth First Traversal"+newGraph.depthFirst(vertexA));
+      System.out.println("Depth First Traversal"+newGraph.depthFirst(vertexD));
+      System.out.println("Depth First Traversal"+newGraph.depthFirst(vertexF));
+      System.out.println("-------------------------------------------");
+
       String[] arr={"Pandora", "Arendelle", "Metroville", "Monstroplolis", "Narnia", "Naboo"};
-      Graph myGraph = new Graph();
+      Graph<String> myGraph = new Graph();
       Vertex<String> vertex8=myGraph.addNode("8");
       Vertex<String> vertex1=myGraph.addNode("1");
       Vertex<String> vertex2=myGraph.addNode("2");
@@ -45,12 +51,14 @@ public class Library {
       myGraph.addEdge(vertex8 , vertex9, 100);
       myGraph.addEdge(vertex8 , vertex2, 40);
       myGraph.addEdge(vertex8 , vertex5, 60);
-      Vertex<String> [] arr1=new Vertex[]{vertex1,vertex8,vertex9};
+      Vertex<String>[] arr1=new Vertex[]{vertex1,vertex8,vertex9};
       String [] Arr=new String[]{"8","1"};
       System.out.println(myGraph.getNeighbors(vertex1).get(0));
       System.out.println(myGraph.getNeighbors(vertex1));
       System.out.println(Arrays.toString(arr1));
       System.out.println(myGraph.businessTrip(myGraph,arr1));
+
+
    }
 
 
