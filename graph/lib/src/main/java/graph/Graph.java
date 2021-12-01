@@ -113,6 +113,30 @@ public class Graph <T>{
         return isFound + ", $" + cost;
     }
 
+    public List<Vertex<T>> depthFirst(Vertex<T> root) {
+        if (root==null){
+            return null;
+        }
+        List<Vertex<T>> nodes = new ArrayList<>();
+        Set<Vertex<T>> visited = new HashSet<>();
+        Stack<Vertex<T>> stack = new Stack<>();
+        stack.push(root);
+
+        while (!stack.isEmpty()) {
+            Vertex<T> top = stack.pop();
+            if (!visited.contains(top)) {
+                visited.add(top);
+                nodes.add(top);
+                for (Edge<T> e: getNeighbors(top)) {
+
+                    stack.push(e.vertex);
+
+
+                }
+            }
+        }
+        return nodes;
+    }
 
     @Override
     public String toString() {

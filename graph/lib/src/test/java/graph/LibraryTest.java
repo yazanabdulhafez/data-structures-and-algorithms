@@ -139,4 +139,48 @@ class LibraryTest {
         assertEquals("true, $354", graph.businessTrip(graph, cities));
         assertEquals("true, $677", graph.businessTrip(graph, cities1));
     }
+
+    @Test
+    public void graphDepthFirst() {
+
+        // if the graph is empty return null
+        Graph<String> graph = new Graph();
+        assertNull(graph.depthFirst(null));
+
+//        // if we have one node with no edges return that node
+        Vertex<String> v1 = graph.addNode("A");
+        assertEquals("[A]", graph.depthFirst(v1).toString());
+//
+//        // graph with only one node and one edge with itself return that node
+        graph.addEdge(v1, v1, 0);
+      assertEquals("[A]", graph.depthFirst(v1).toString());
+
+        //happy path
+        Vertex<String> v2 = graph.addNode("B");
+        Vertex<String> v3 = graph.addNode("C");
+        Vertex<String> v4 = graph.addNode("D");
+        Vertex<String> v5 = graph.addNode("E");
+        Vertex<String> v6 = graph.addNode("F");
+        Vertex<String> v8 = graph.addNode("G");
+        Vertex<String> v7 = graph.addNode("H");
+
+        graph.addEdge(v1, v4, 0);
+        graph.addEdge(v4, v5, 0);
+        graph.addEdge(v4, v7, 0);
+        graph.addEdge(v4, v6, 0);
+        graph.addEdge(v1, v2, 0);
+
+
+        graph.addEdge(v2, v3, 0);
+        graph.addEdge(v2, v4, 0);
+
+        graph.addEdge(v3, v8, 0);
+
+
+        graph.addEdge(v6, v7, 0);
+        System.out.println(graph);
+
+        assertEquals("[A, B, D, F, H, E, C, G]", graph.depthFirst(v1).toString());
+    }
+
 }
