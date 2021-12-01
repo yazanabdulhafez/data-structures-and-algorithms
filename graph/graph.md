@@ -140,6 +140,17 @@ Use a nested loop to check if each city has direct edge with the next city and a
 
 Clone the repo from GitHub and open the project folder inside your IDE then open file.then build it ,you can run the library by ./gradlew run,and run the test by ./gradlew test.
 
+## Depth First
+
+### Challenge(38)
+
+Write the following method for the Graph class:
+
+* Name: Depth first
+* Arguments: Node (Starting point of search)
+* Return: A collection of nodes in their pre-order depth-first traversal order
+* Program output: Display the collection
+
 ## Whiteboard (38)
 
 ![depthFirst](/graph/img/CC38.png)
